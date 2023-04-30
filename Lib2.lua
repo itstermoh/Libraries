@@ -571,7 +571,7 @@ function Blacklib:Window(WindowName)
         local function UpdateSize()
             local cLt = ContainerLayout.AbsoluteContentSize
 
-            game.TweenService:Create(Container, TweenInfo.new(.3, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+            game.TweenService:Create(Container, TweenInfo.new(.05, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
                 CanvasSize = UDim2.new(0, 0, 0, cLt.Y)
             }):Play()
         end

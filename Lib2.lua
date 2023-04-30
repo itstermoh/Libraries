@@ -73,7 +73,7 @@ function Blacklib:Window(WindowName)
     WindowFrame.Size = UDim2.new(0, 550, 0, 0)
     WindowFrame.ClipsDescendants = true
     
-    WindowFrame:TweenSize(UDim2.new(0, 550, 0, 350), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, .3, true)
+    WindowFrame:TweenSize(UDim2.new(0, 550, 0, 350), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, .6, true)
     
     WindowCorner.Name = "WindowCorner"
     WindowCorner.Parent = WindowFrame

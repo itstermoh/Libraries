@@ -583,10 +583,10 @@ function Blacklib:Window(WindowName)
         TabFrame.MouseButton1Click:Connect(function()
             for i,v in next, TabWindow:GetChildren() do
                 if v:IsA('TextButton') then
-                    game.TweenService:Create(v, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+                    game.TweenService:Create(v, TweenInfo.new(.0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                         {BackgroundColor3 = Color3.fromRGB(30,30,30)}
                         ):Play()
-                    game.TweenService:Create(v, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+                    game.TweenService:Create(v, TweenInfo.new(.0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                         {BackgroundTransparency = 0}
                         ):Play()
                     UpdateSize()
@@ -600,11 +600,11 @@ function Blacklib:Window(WindowName)
                 ):Play()
             
             for i,v in next, ContainerItem:GetChildren() do
-                v:TweenSize(UDim2.new(0, 387, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .3, true)
+                v:TweenSize(UDim2.new(0, 387, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .05, true)
                 UpdateSize()
             end
             wait(0.1)
-            Container:TweenSize(UDim2.new(0, 387, 0, 304), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .3, true)
+            Container:TweenSize(UDim2.new(0, 387, 0, 304), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .05, true)
             UpdateSize()
             
         end)

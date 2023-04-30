@@ -353,7 +353,7 @@ function Blacklib:Window(WindowName)
     end)
     spawn(function()
         while task.wait() do
-            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("i") wait(.2) titlefunc:Refresh("it") wait(.2) titlefunc:Refresh("its") wait(.2) titlefunc:Refresh("itst") wait(.2) titlefunc:Refresh("itste") wait(.2) titlefunc:Refresh("itster") wait(.2) titlefunc:Refresh("itsterm") wait(.2) titlefunc:Refresh("itstermo") wait(.2) titlefunc:Refresh("itstermoh") wait(.2) titlefunc:Refresh("itstermo") wait(.2) titlefunc:Refresh("itsterm") wait(.2) titlefunc:Refresh("itster") wait(.2) titlefunc:Refresh("itste") wait(.2) titlefunc:Refresh("itst") wait(.2) titlefunc:Refresh("its") wait(.2) titlefunc:Refresh("it") wait(.2) titlefunc:Refresh("i") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
+            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("j") wait(.2) titlefunc:Refresh("jm") wait(.2) titlefunc:Refresh("jme") wait(.2) titlefunc:Refresh("jmes") wait(.2) titlefunc:Refresh("jmes") wait(.2) titlefunc:Refresh("jme") wait(.2) titlefunc:Refresh("jm") wait(.2) titlefunc:Refresh("j") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
         end
     end)
     -- End Windows --
@@ -571,7 +571,7 @@ function Blacklib:Window(WindowName)
         local function UpdateSize()
             local cLt = ContainerLayout.AbsoluteContentSize
 
-            game.TweenService:Create(Container, TweenInfo.new(.05, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+            game.TweenService:Create(Container, TweenInfo.new(.3, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
                 CanvasSize = UDim2.new(0, 0, 0, cLt.Y)
             }):Play()
         end
@@ -583,10 +583,10 @@ function Blacklib:Window(WindowName)
         TabFrame.MouseButton1Click:Connect(function()
             for i,v in next, TabWindow:GetChildren() do
                 if v:IsA('TextButton') then
-                    game.TweenService:Create(v, TweenInfo.new(.0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+                    game.TweenService:Create(v, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                         {BackgroundColor3 = Color3.fromRGB(30,30,30)}
                         ):Play()
-                    game.TweenService:Create(v, TweenInfo.new(.0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+                    game.TweenService:Create(v, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                         {BackgroundTransparency = 0}
                         ):Play()
                     UpdateSize()
@@ -600,11 +600,11 @@ function Blacklib:Window(WindowName)
                 ):Play()
             
             for i,v in next, ContainerItem:GetChildren() do
-                v:TweenSize(UDim2.new(0, 387, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .05, true)
+                v:TweenSize(UDim2.new(0, 387, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .3, true)
                 UpdateSize()
             end
             wait(0.1)
-            Container:TweenSize(UDim2.new(0, 387, 0, 304), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .05, true)
+            Container:TweenSize(UDim2.new(0, 387, 0, 304), Enum.EasingDirection.In, Enum.EasingStyle.Linear, .3, true)
             UpdateSize()
             
         end)

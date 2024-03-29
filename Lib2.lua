@@ -577,8 +577,12 @@ function Blacklib:Window(WindowName)
 end
 
 UpdateSize()
-Container.ChildAdded:Connect(UpdateSize)
-Container.ChildRemoved:Connect(UpdateSize)
+Container.ChildAdded:Connect(function()
+				UpdateSize
+			end)
+Container.ChildRemoved:Connect(function()
+				UpdateSize
+			end)
 
 -- function --
 TabFrame.MouseButton1Click:Connect(function()

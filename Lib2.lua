@@ -578,10 +578,10 @@ end
 
 UpdateSize()
 Container.ChildAdded:Connect(function()
-				UpdateSize
+				UpdateSize()
 			end)
 Container.ChildRemoved:Connect(function()
-				UpdateSize
+				UpdateSize()
 			end)
 
 -- function --

@@ -577,10 +577,10 @@ function Blacklib:Window(WindowName)
 end
 
 UpdateSize()
-Container.ChildAdded:Connect(function()
+Container.ChildAdded:Connect(function(value)
 				UpdateSize()
 			end)
-Container.ChildRemoved:Connect(function()
+Container.ChildRemoved:Connect(function(value)
 				UpdateSize()
 			end)
 

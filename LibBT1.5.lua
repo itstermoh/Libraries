@@ -343,7 +343,7 @@ function Library:CreateWindow(title, gameName, themeList)
     mainLogo.BorderSizePixel = 0
     mainLogo.Position = UDim2.new(0.00200000009, 3, 0.114, 0)
     mainLogo.Size = UDim2.new(0, 21, 0, 21)
-    mainLogo.Image = "http://www.roblox.com/asset/?id=12021503727"
+    mainLogo.Image = "http://www.roblox.com/asset/?id=14451778024"
     mainLogo.ImageColor3 = Color3.fromRGB(255, 0, 0)
 
     mainTitle.Name = "mainTitle"
@@ -410,13 +410,13 @@ function Library:CreateWindow(title, gameName, themeList)
     end)
 
     mainDiscord.MouseButton1Click:Connect(function()
-        setclipboard("https://discord.gg/Mp7qppfwER")
+        setclipboard("https://discord.gg/itstermoh")
         wait(.1)
         game:GetService("StarterGui"):SetCore("SendNotification",{
             Title = "Discord",
             Text = "Discord copied on your clipboard",
-            Button1 = "Okay",
-            Duration = 20
+            Button1 = "Alright",
+            Duration = 5
         })
     end)
 

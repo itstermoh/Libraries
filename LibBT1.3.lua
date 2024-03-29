@@ -3,6 +3,7 @@
 -- MADE By WANZ --
 -- DO NOT COPYRIGHT --
 -- (WINDOWS AND MOBILE VERSION) --
+-- EDITED BY jmes (1/4/23) --
 
 -- service --
 local Blacklib = {}
@@ -30,10 +31,10 @@ _G.TabThemeColor = Color3.fromRGB(250, 0, 0)
 _G.SectionColor = Color3.fromRGB(150, 150, 150)
 _G.SectionImageColor = Color3.fromRGB(150, 150, 150)
 _G.SectionTextColor = Color3.fromRGB(150, 150, 150)
-_G.SectionOn = Color3.fromRGB(0, 250, 0)
+_G.SectionOn = Color3.fromRGB(150, 150, 150)
 
 -- Windows --
-function Blacklib:Window()
+function Blacklib:Window(WindowName)
     local osfunc = {}
     local titlefunc = {}
     local pingfunc = {}
@@ -52,9 +53,8 @@ function Blacklib:Window()
     local ServerTime = Instance.new("TextLabel")
     local Pinged = Instance.new("TextLabel")
     local CloseButton = Instance.new("TextButton")
-    
     -- Propertiers --
-    BlackTrap.Name = "BlackTrap"
+    BlackTrap.Name = WindowName or "BlackTrap"
     BlackTrap.Parent = game.CoreGui
     BlackTrap.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
@@ -111,8 +111,8 @@ function Blacklib:Window()
     BlackImage.BackgroundTransparency = 1.000
     BlackImage.Position = UDim2.new(0, 3, 0, 3)
     BlackImage.Size = UDim2.new(0, 25, 0, 25)
-    BlackImage.Image = "rbxassetid://8666601749"
-    BlackImage.ImageColor3 = Color3.fromRGB(0,220,0)
+    BlackImage.Image = "rbxassetid://11482100481"
+    --BlackImage.ImageColor3 = Color3.fromRGB(0,220,0)
     
     BlackTitle.Name = "BlackTitle"
     BlackTitle.Parent = WindowFrame
@@ -134,7 +134,7 @@ function Blacklib:Window()
     Space.Size = UDim2.new(0, 10, 0, 25)
     Space.Font = Enum.Font.GothamBold
     Space.Text = "|"
-    Space.TextColor3 = Color3.fromRGB(0,150,0)
+    Space.TextColor3 = Color3.fromRGB(150,150,150)
     Space.TextSize = 18.000
     
     ServerTime.Name = "ServerTime"
@@ -157,7 +157,7 @@ function Blacklib:Window()
     Space2.Size = UDim2.new(0, 10, 0, 25)
     Space2.Font = Enum.Font.GothamBold
     Space2.Text = "|"
-    Space2.TextColor3 = Color3.fromRGB(0,150,0)
+    Space2.TextColor3 = Color3.fromRGB(150,150,150)
     Space2.TextSize = 18.000
     
     Pinged.Name = "Pinged"
@@ -180,7 +180,7 @@ function Blacklib:Window()
     CloseButton.Position = UDim2.new(0, 525, 0, 3)
     CloseButton.Size = UDim2.new(0, 25, 0, 25)
     CloseButton.Font = Enum.Font.Gotham
-    CloseButton.TextColor3 = Color3.fromRGB(0, 200, 0)
+    CloseButton.TextColor3 = Color3.fromRGB(150, 150, 150)
     CloseButton.Text = "×"
     CloseButton.Rotation = 0
     CloseButton.TextSize = 25.000
@@ -342,8 +342,8 @@ function Blacklib:Window()
         local hour = (date.hour) % 24
         local ampm = hour < 12 and "AM" or "PM"
         local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-        local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
-        osfunc:Refresh(datetime.." - "..timezone)
+        local datetime = string.format("%02d/%02d/%04d", date.month, date.day, date.year)
+        osfunc:Refresh(timezone.." - "..datetime)
     end
     spawn(function()
         while true do
@@ -353,7 +353,7 @@ function Blacklib:Window()
     end)
     spawn(function()
         while task.wait() do
-            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("B") wait(.2) titlefunc:Refresh("Bl") wait(.2) titlefunc:Refresh("Bla") wait(.2) titlefunc:Refresh("Blac") wait(.2) titlefunc:Refresh("Black") wait(.2) titlefunc:Refresh("BlackT") wait(.2) titlefunc:Refresh("BlackTr") wait(.2) titlefunc:Refresh("BlackTra") wait(.2) titlefunc:Refresh("BlackTrap") wait(.9) titlefunc:Refresh("BlackTra") wait(.2) titlefunc:Refresh("BlackTr") wait(.2) titlefunc:Refresh("BlackT") wait(.2) titlefunc:Refresh("Black") wait(.2) titlefunc:Refresh("Blac") wait(.2) titlefunc:Refresh("Bla") wait(.2) titlefunc:Refresh("Bl") wait(.2) titlefunc:Refresh("B") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
+            titlefunc:Refresh("") wait(.2) titlefunc:Refresh("j") wait(.2) titlefunc:Refresh("jm") wait(.2) titlefunc:Refresh("jme") wait(.2) titlefunc:Refresh("jmes") wait(.2) titlefunc:Refresh("jmes") wait(.2) titlefunc:Refresh("jme") wait(.2) titlefunc:Refresh("jm") wait(.2) titlefunc:Refresh("j") wait(.2) titlefunc:Refresh("") wait(.2) wait(.3)
         end
     end)
     -- End Windows --
@@ -500,7 +500,6 @@ function Blacklib:Window()
         end
     end)()
     -- End Notification --
-    
     -- Tabs --
     local Tabs = {}
     function Tabs:Tab(tabtitle, img)
@@ -594,7 +593,7 @@ function Blacklib:Window()
                 end
             end
             game.TweenService:Create(TabFrame, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), 
-                {BackgroundColor3 = Color3.fromRGB(0,200,0)}
+                {BackgroundColor3 = Color3.fromRGB(200,200,200)}
                 ):Play()
             game.TweenService:Create(TabFrame, TweenInfo.new(.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                 {BackgroundTransparency = 0.9}
@@ -792,8 +791,9 @@ function Blacklib:Window()
             end
             -- End Button --
             
-            -- Toggled --
+            -- Toggle --
             function ItemHand:Toggle(TogInfo, default, callback)
+		local togglefunc = {}
                 local toggle = false
                 local CheckFrame = Instance.new("Frame")
                 local CheckFrame2 = Instance.new("Frame")
@@ -883,16 +883,32 @@ function Blacklib:Window()
                 if default == true then
                     ImageButton.ImageRectOffset = Vector2.new(4, 836)
                     game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-                        {ImageColor3 = Color3.fromRGB(0,255,0)}
+                        {ImageColor3 = Color3.fromRGB(180,180,180)}
                         ):Play()
                     toggle = not toggle
                     pcall(callback, toggle)
                 end
                 
+		function togglefunc:Set(toggle)
+		    if toggle == false then
+			game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+			    {ImageColor3 = Color3.fromRGB(180,180,180)}
+			    ):Play()
+			ImageButton.ImageRectOffset = Vector2.new(4, 836)
+		    else
+			game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
+			    {ImageColor3 = Color3.fromRGB(180,180,180)}
+			    ):Play()
+			ImageButton.ImageRectOffset = Vector2.new(940, 784)
+		    end
+		    toggle = not toggle
+		end
+		
+		
                 ImageButton.MouseButton1Click:Connect(function()
                     if toggle == false then
                         game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-                            {ImageColor3 = Color3.fromRGB(0,255,0)}
+                            {ImageColor3 = Color3.fromRGB(180,180,180)}
                             ):Play()
                         ImageButton.ImageRectOffset = Vector2.new(4, 836)
                     else
@@ -904,6 +920,7 @@ function Blacklib:Window()
                     toggle = not toggle
                     pcall(callback, toggle)
                 end)
+		return togglefunc
             end
             -- End Toggle --
             
@@ -1067,9 +1084,9 @@ function Blacklib:Window()
                 ImageButton.MouseButton1Click:Connect(function()
                     if DropToggled then
                         DropToggled = false
-                        DropSizeFrame:TweenSize(UDim2.new(0, 387, 0, 60), 'InOut', 'Linear', 0.08)
+                        DropSizeFrame:TweenSize(UDim2.new(0, 387, 0, 60), 'InOut', 'Linear', 0.03)
                         Frame:TweenSize(UDim2.new(0, 381, 0, 60), 'InOut', 'Linear', 0.08)
-                        DropItemScroll:TweenSize(UDim2.new(0, 375, 0, 0), 'InOut', 'Linear', 0.08)
+                        DropItemScroll:TweenSize(UDim2.new(0, 375, 0, 0), 'InOut', 'Linear', 0.03)
                         game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                             {Rotation = 180}
                             ):Play()
@@ -1079,14 +1096,14 @@ function Blacklib:Window()
                         
                     else
                         DropToggled = true
-                        DropSizeFrame:TweenSize(UDim2.new(0, 387, 0, 65 + FrameSize), 'InOut', 'Linear', 0.08)
-                        Frame:TweenSize(UDim2.new(0, 381, 0, 65 + FrameSize), 'InOut', 'Linear', 0.08)
-                        DropItemScroll:TweenSize(UDim2.new(0, 375, 0, FrameSize), 'InOut', 'Linear', 0.08)
+                        DropSizeFrame:TweenSize(UDim2.new(0, 387, 0, 65 + FrameSize), 'InOut', 'Linear', 0.03)
+                        Frame:TweenSize(UDim2.new(0, 381, 0, 65 + FrameSize), 'InOut', 'Linear', 0.03)
+                        DropItemScroll:TweenSize(UDim2.new(0, 375, 0, FrameSize), 'InOut', 'Linear', 0.03)
                         game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
                             {Rotation = 0}
                             ):Play()
                         game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
-                            {ImageColor3 = Color3.fromRGB(0,255,0)}
+                            {ImageColor3 = Color3.fromRGB(180,180,180)}
                             ):Play()
                     end
                 end)
@@ -1100,14 +1117,14 @@ function Blacklib:Window()
                     elseif ItemCount == 3 then
                         FrameSize = 90
                     elseif ItemCount >= 3 then
-                        FrameSize = 120
+                        FrameSize = 150
                     end
                     
                     local ItemList = Instance.new("TextButton")
                     
                     ItemList.Name = "ItemList"
                     ItemList.Parent = DropItemScroll
-                    ItemList.BackgroundColor3 = Color3.fromRGB(0,255,0)
+                    ItemList.BackgroundColor3 = Color3.fromRGB(180,180,180)
                     ItemList.BackgroundTransparency = 1.000
                     ItemList.Size = UDim2.new(0, 375, 0, 30)
                     ItemList.AutoButtonColor = false
@@ -1153,7 +1170,7 @@ function Blacklib:Window()
                             ItemCount = 0
                         end
                     end
-                    DropTextList.Text = "Reset Succesfully..."
+                    DropTextList.Text = ""
                     DropToggled = false
                     DropSizeFrame:TweenSize(UDim2.new(0, 387, 0, 60), 'InOut', 'Linear', 0.08)
                     Frame:TweenSize(UDim2.new(0, 381, 0, 60), 'InOut', 'Linear', 0.08)
@@ -1176,18 +1193,18 @@ function Blacklib:Window()
                     elseif ItemCount == 3 then
                         FrameSize = 90
                     elseif ItemCount >= 3 then
-                        FrameSize = 120
+                        FrameSize = 150
                     end
                     
                     local ItemList = Instance.new("TextButton")
                     ItemList.Name = "ItemList"
                     ItemList.Parent = DropItemScroll
-                    ItemList.BackgroundColor3 = Color3.fromRGB(0,255,0)
+                    ItemList.BackgroundColor3 = Color3.fromRGB(180,180,180)
                     ItemList.BackgroundTransparency = 1.000
                     ItemList.Size = UDim2.new(0, 375, 0, 30)
                     ItemList.AutoButtonColor = false
                     ItemList.Font = Enum.Font.Code
-                    ItemList.TextColor3 = Color3.fromRGB(255,0,0)
+                    ItemList.TextColor3 = Color3.fromRGB(180,180,180)
                     ItemList.TextSize = 12.000
                     ItemList.Text = newadd or "None..."
                     ItemList.TextXAlignment = Enum.TextXAlignment.Center
@@ -1724,7 +1741,82 @@ function Blacklib:Window()
 				
             end
             -- End Keybind --
-            
+	    
+		-- Paragraph --
+		function ItemHand:CreateParagraph(textlabel)
+			local paragraphfunc = {}
+
+			local Title = Instance.new("Frame")
+			local TitleText = Instance.new("TextButton")
+			local Content = Instance.new("ScrollingFrame")
+			local ContentText = Instance.new("TextButton")   
+
+			-- Prop --
+			Title.Name = "Title"
+			Title.Parent = sectionFrame
+			Title.BackgroundColor3 = _G.BackgroundItemColor
+			Title.BackgroundTransparency = 1
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(0, 387, 0, 15)
+
+			TitleText.Name = "TitleText"
+			TitleText.Parent = Title
+			TitleText.BackgroundColor3 = _G.SectionColor
+			TitleText.BackgroundTransparency = 1.000
+			TitleText.AutoButtonColor = false
+			TitleText.Position = UDim2.new(0, 3, 0, 0)
+			TitleText.Size = UDim2.new(0, 381, 0, 15)
+			TitleText.Font = Enum.Font.Code
+			TitleText.Text = textlabel.Title or ""
+			TitleText.TextColor3 = Color3.fromRGB(255,255,255)
+			TitleText.TextSize = 12.000
+			TitleText.TextXAlignment = Enum.TextXAlignment.Left
+
+
+			Content.Name = "Content"
+			Content.Parent = sectionFrame
+			Content.BackgroundColor3 = _G.BackgroundItemColor
+			Content.BackgroundTransparency = 0
+			Content.BorderSizePixel = 0
+			Content.BorderColor3 = Color3.fromRGB(255,255,255)
+			Content.Position = UDim2.new(0, 3, 0, 0)
+			Content.Size = UDim2.new(0, 381, 0, 110)
+			--Content.ScrollBarThickness = 0
+			Content.ClipsDescendants = true			
+
+			ContentText.Name = "ContentText"
+			ContentText.Parent = Content
+			ContentText.BackgroundColor3 = _G.SectionColor
+			ContentText.BackgroundTransparency = 1
+			ContentText.AutoButtonColor = false
+			ContentText.Position = UDim2.new(0, 3, 0, 0)
+			ContentText.Font = Enum.Font.Code
+			ContentText.Text = textlabel.Content
+
+			ContentText.TextColor3 = Color3.fromRGB(255,255,255)
+			ContentText.TextSize = 12.000
+			ContentText.TextXAlignment = Enum.TextXAlignment.Left
+			ContentText.TextYAlignment = Enum.TextYAlignment.Top
+			ContentText.TextScaled = false
+			ContentText.TextWrapped = true
+
+
+			Content.CanvasSize = UDim2.new(0, 0, 0, string.len(ContentText.Text) / 1.5)
+			ContentText.Size = UDim2.new(0, 381, 0, string.len(ContentText.Text) / 1.5)
+
+			ContentText:GetPropertyChangedSignal("Text"):Connect(function()
+				Content.CanvasSize = UDim2.new(0, 0, 0, string.len(ContentText.Text) / 1.5)
+				ContentText.Size = UDim2.new(0, 381, 0, string.len(ContentText.Text) / 1.5)
+			end)
+
+		-- Paragraph Script --
+		function paragraphfunc:Set(NewParagraphSettings)
+			TitleText.Text = NewParagraphSettings.Title
+			ContentText.Text = NewParagraphSettings.Content
+		end
+		return paragraphfunc
+		end
+	    
             -- Label --
             function ItemHand:Label(textlabel)
                 local labelfunc = {}

@@ -275,7 +275,7 @@ function Library:CreateWindow(title, gameName, themeList)
     openBT.BackgroundTransparency = 1.000
     openBT.BorderSizePixel = 0
     openBT.Size = UDim2.new(0, 35, 0, 35)
-    openBT.Image = "http://www.roblox.com/asset/?id=12021503727"
+    openBT.Image = "http://www.roblox.com/asset/?id=14451778024"
     openBT.ImageColor3 = Color3.fromRGB(255, 0, 0)
     
     openBT.MouseLeave:Connect(function()

@@ -1365,7 +1365,7 @@ function Library:CreateWindow(title, gameName, themeList)
 						Library:AttemptSave();
 					end);
 
-					function TextBox:OnChanged(Func)
+					function TextBoxFunc:OnChanged(Func)
 						Textbox.Changed:Connect(Func)
 						Func();
 					end;

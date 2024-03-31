@@ -3240,6 +3240,11 @@ function DiscordLib:Window(text)
                 function LabelFunctions:UpdateLabel(text)
                     LabelTitle.Text = text;
                 end
+
+				function LabelFunctions:SetVerticalDistance(distance)
+					LabelTitle.Position = UDim2.new(0, 5, 0, distance)
+				end
+				
                 return LabelFunctions
 			end
 			return ChannelContent

@@ -3238,7 +3238,7 @@ function DiscordLib:Window(text)
 				ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
 
                 function LabelFunctions:UpdateLabel(text)
-                    Label.Text = text;
+                    LabelTitle.Text = text;
                 end
                 return LabelFunctions
 			end

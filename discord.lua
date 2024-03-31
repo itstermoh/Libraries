@@ -3228,7 +3228,7 @@ function DiscordLib:Window(text)
 				LabelTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				LabelTitle.BackgroundTransparency = 1.000
 				if center then
-					LabelTitle.Position = UDim2.new(0.5, 0, 0, 0)
+					LabelTitle.Position = UDim2.new(0.5, 5, 0, 0)
 				else
 					LabelTitle.Position = UDim2.new(0, 5, 0, 0)
 				end

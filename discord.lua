@@ -3208,8 +3208,8 @@ function DiscordLib:Window(text)
 
             function ChannelContent:Label(text)
                 local LabelFunctions = {}
-				local Label = Instance.new("TextButton")
 				local LabelTitle = Instance.new("TextLabel")
+				local Label = Instance.new("TextButton")
 
 				Label.Name = "Label"
 				Label.Parent = ChannelHolder

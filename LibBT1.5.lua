@@ -275,7 +275,7 @@ function Library:CreateWindow(title, gameName, themeList)
     openBT.BackgroundTransparency = 1.000
     openBT.BorderSizePixel = 0
     openBT.Size = UDim2.new(0, 35, 0, 35)
-    openBT.Image = "http://www.roblox.com/asset/?id=14451778024"
+    openBT.Image = "http://www.roblox.com/asset/?id=12021503727"
     openBT.ImageColor3 = Color3.fromRGB(255, 0, 0)
     
     openBT.MouseLeave:Connect(function()
@@ -343,7 +343,7 @@ function Library:CreateWindow(title, gameName, themeList)
     mainLogo.BorderSizePixel = 0
     mainLogo.Position = UDim2.new(0.00200000009, 3, 0.114, 0)
     mainLogo.Size = UDim2.new(0, 21, 0, 21)
-    mainLogo.Image = "http://www.roblox.com/asset/?id=14451778024"
+    mainLogo.Image = "http://www.roblox.com/asset/?id=12021503727"
     mainLogo.ImageColor3 = Color3.fromRGB(255, 0, 0)
 
     mainTitle.Name = "mainTitle"
@@ -410,13 +410,13 @@ function Library:CreateWindow(title, gameName, themeList)
     end)
 
     mainDiscord.MouseButton1Click:Connect(function()
-        setclipboard("https://discord.gg/itstermoh")
+        setclipboard("https://discord.gg/Mp7qppfwER")
         wait(.1)
         game:GetService("StarterGui"):SetCore("SendNotification",{
             Title = "Discord",
             Text = "Discord copied on your clipboard",
-            Button1 = "Alright",
-            Duration = 5
+            Button1 = "Okay",
+            Duration = 20
         })
     end)
 
@@ -1365,13 +1365,10 @@ function Library:CreateWindow(title, gameName, themeList)
 						Library:AttemptSave();
 					end);
 
-					TextBox.Changed:Connect(function()
-						pcall(callback)
-					end)
-					--function TextBox:OnChanged(Func)
-					--	TextBox.Changed = Func;
-					--	Func()
-					--end;
+					function TextBox:OnChanged(Func)
+						Textbox.Changed = Func;
+						Func();
+					end;
 					
                     viewInfo.MouseButton1Click:Connect(function()
                         if not viewDe then

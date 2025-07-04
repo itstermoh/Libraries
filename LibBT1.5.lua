@@ -379,7 +379,7 @@ function Library:CreateWindow(title, gameName, themeList)
         Utility:TweenObject(close, {BackgroundTransparency = 0.5}, 0.1)
     end)
     
-    --[[close.MouseButton1Click:Connect(function()
+    close.MouseButton1Click:Connect(function()
         game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             ImageTransparency = 1
         }):Play()
@@ -390,7 +390,7 @@ function Library:CreateWindow(title, gameName, themeList)
 		}):Play()
         wait(1)
         ScreenGui:Destroy()
-    end)]]
+    end)
 
     mainDiscord.Name = "mainDiscord"
     mainDiscord.Parent = mainTopHeader

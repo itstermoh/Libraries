@@ -267,7 +267,7 @@ function Library:CreateWindow(title, gameName, themeList)
     CoverBT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     CoverBT.BackgroundTransparency = 1.000
     CoverBT.Size = UDim2.new(0, 35, 0, 35)
-    CoverBT.Position = UDim2.new(0.100220447, 0, 0, 150)
+    CoverBT.Position = UDim2.new(0.200220447, 0, 0, 25)
 
     openBT.Name = "openBT"
     openBT.Parent = CoverBT

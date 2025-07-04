@@ -255,6 +255,7 @@ function Library:CreateWindow(title, gameName, themeList)
     ScreenGui.Name = LibName
     ScreenGui.Parent = game.CoreGui
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ScreenGui.IgnoreGuiInset = true
 
     game:GetService("UserInputService").InputBegan:connect(function(input, hide) 
         if input.KeyCode == Enum.KeyCode.Tab then 
@@ -267,7 +268,7 @@ function Library:CreateWindow(title, gameName, themeList)
     CoverBT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     CoverBT.BackgroundTransparency = 1.000
     CoverBT.Size = UDim2.new(0, 35, 0, 35)
-    CoverBT.Position = UDim2.new(0.200220447, 0, 0, 25)
+    CoverBT.Position = UDim2.new(1, -45, 0, 0)
 
     openBT.Name = "openBT"
     openBT.Parent = CoverBT
